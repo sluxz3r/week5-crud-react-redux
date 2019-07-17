@@ -1,0 +1,36 @@
+.button {
+	background-color: #f4cf5d;
+	border: none;
+	color: black;
+	border-radius: 8px;
+	height: 38px;
+	width: 80px;
+	margin-left: 80%; 
+	margin-top: 40px;
+	font-size: 15px;
+	outline: none;
+	cursor: pointer;
+	float: left;
+}
+
+.buttonSave {
+	background-color: #f4cf5d;
+	border: none;
+	color: black;
+	border-radius: 8px;
+	height: 38px;
+	width: 80px;
+	margin-top: -30px;
+	font-size: 15px;
+	position: relative;
+	outline: none;
+	cursor: pointer;
+}
+.close {
+	font-size: 25px;
+	margin-left: 95%;
+	outline: none;
+	border: none;
+	cursor: pointer;
+	background-color: transparent;
+}
