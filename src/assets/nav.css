@@ -6,7 +6,6 @@
     background-color: rgb(31, 31, 31);
     position: fixed;
     width: 100%;
-    z-index: 10000;
 }
 
 .nav button {

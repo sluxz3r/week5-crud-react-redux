@@ -6,7 +6,7 @@ import { getBooks, deleteBook } from '../Publics/redux/actions/book';
 
 class Books extends Component {
     state = {
-        index:'',
+        index: '',
         books: [],
     };
     componentDidMount = async () => {
@@ -16,11 +16,11 @@ class Books extends Component {
         });
     };
 
-    deleteBook =  async (bookid) => {
+    deleteBook = async (bookid) => {
         await this.props.dispatch(deleteBook(bookid));
-       console.log(bookid)
+        console.log(bookid)
     }
-    
+
     render() {
         const { books } = this.state;
         const list = books.bookList;
@@ -45,25 +45,26 @@ class Books extends Component {
                         list.length > 0 &&
                         list.map((item, index) => {
                             return (
-                    <tbody>
-                        <tr key={index}>
-                            <td style={{textAlign:'center'}}>{index + 1}</td> 
-                            <td><a  style={{textDecoration:'none', color:'black'}} href={`/book/${item.bookid}`}>{item.name}</a></td>
-                            <td>{item.writer}</td>
-                            <td>{item.category}</td>
-                            <td>{item.location}</td>
-                            <td>Tersedia</td>
-                            <td style={{textAlign:'center'}}>
-                                <a href={`/books/${item.bookid}`}>
-                                <button className='button1'>Edit</button>
-                                </a>
-                                <a href='/books/'>
-                                    <button className='button2' onClick={() => this.deleteBook(item.bookid)}>Delete</button>
-                                </a>
-                            </td>
-                        </tr>
-                    </tbody>
-                  
+                                <tbody>
+                                    <tr key={index}>
+                                        <td style={{ textAlign: 'center' }}>{index + 1}</td>
+                                        <td><a style={{ textDecoration: 'none', color: 'black' }} href={`/book/${item.bookid}`}>{item.name}</a></td>
+                                        <td>{item.writer}</td>
+                                        <td>{item.category}</td>
+                                        <td>{item.location}</td>
+                                        {item.status_borrow == 1 ? 
+                                        ( <td>No Stock</td> ) : ( <td>Available</td> )}
+                                        <td style={{ textAlign: 'center' }}>
+                                            <a href={`/books/${item.bookid}`}>
+                                                <button className='button1'>Edit</button>
+                                            </a>
+                                            <a href='/books/'>
+                                                <button className='button2' onClick={() => this.deleteBook(item.bookid)}>Delete</button>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+
                             )
                         })}
                 </table>

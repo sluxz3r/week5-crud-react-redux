@@ -1,6 +1,9 @@
+.atas{
+    height:65px
+}
 .gambar1{
     width: 100%;
-    height: 250px;
+    height: 200px;
     background: black;
     object-fit: cover;
     object-position: 100% 20%;
@@ -8,19 +11,20 @@
 }
 
 .book{
-    position: relative;
+    position: absolute;
     padding: 20px 10px 10px 100px
-}
-
-.book {
-
 }
 
 .gambar2{
     height: 250px;
     border-radius: 10px;
-    border: 1px solid black;
+    border: 1px solid rgb(82, 82, 82);
+    box-shadow: 0px 0px 10px grey;
     position: relative;
-    margin-left: 1200px;
-    margin-top:110px;
+    margin-left: 1100px;
+    margin-top:20px;
+}
+
+.text-besar {
+    margin: 0px 150px 10px 150px;
 }

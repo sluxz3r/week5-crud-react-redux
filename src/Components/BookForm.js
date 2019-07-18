@@ -24,7 +24,6 @@ class BookForm extends Component {
 			modal: false,
 			act: 0,
 			book: [],
-			dropdownOpen: false
 		};
 
 		this.toggle = this.toggle.bind(this);
@@ -68,8 +67,8 @@ class BookForm extends Component {
 				fk_cat,
 				fk_loc,
 			});
-			
-		add()
+
+			add()
 			this.setState((prevState) => ({
 				modal: !prevState.modal
 			}));
@@ -85,98 +84,108 @@ class BookForm extends Component {
 						+
 				</button>
 				</div>
-				<Modal isOpen={this.state.modal} toggle={this.toggle} className="{this.props.className} modal-lg">
+				<Modal isOpen={this.state.modal} toggle={this.toggle} size="lg" style={{ marginTop: '60px', }}>
 					<ModalHeader toggle={this.toggle}>
 						<b>Add Data</b>
 					</ModalHeader>
-					<ModalBody>
+					<ModalBody style={{ paddingLeft: '60px' }}>
 						<Form>
 							<FormGroup row>
-								<Label sm={3} size="lg">
+								<Label sm={2} size="lg">
 									Name
 								</Label>
-								<Col sm={9}>
+								<Col sm={8}>
 									<Input
 										type="text"
 										name="name"
 										onChange={(e) => this.setState({ name: e.target.value })}
 										id="name"
-										placeholder="Name"
+										placeholder="Name..."
 										bsSize="lg"
 									/>
 								</Col>
 							</FormGroup>
 							<FormGroup row>
-								<Label sm={3} size="lg">
+								<Label sm={2} size="lg">
 									Writer
 								</Label>
-								<Col sm={9}>
+								<Col sm={8}>
 									<Input
 										type="text"
-										name="title"
+										name="writer"
 										onChange={(e) => this.setState({ writer: e.target.value })}
-										id="title"
+										id="writer"
 										placeholder="Writer..."
 										bsSize="lg"
 									/>
 								</Col>
 							</FormGroup>
 							<FormGroup row>
-								<Label sm={3} size="lg">
-									Description
-								</Label>
-								<Col sm={9}>
-									<textarea
-										type="text"
-										name="title"
-										onChange={(e) => this.setState({ des: e.target.value })}
-										id="title"
-										placeholder="Description..."
-										bsSize="lg"
-									/>
-								</Col>
-							</FormGroup>
-							<FormGroup row>
-								<Label sm={3} size="lg">
+								<Label sm={2} size="lg">
 									Image
 								</Label>
-								<Col sm={9}>
+								<Col sm={8}>
 									<Input
-										type="text"
-										name="title"
+										type="url"
+										name="image"
 										onChange={(e) => this.setState({ image: e.target.value })}
-										id="title"
+										id="image"
 										placeholder="Image..."
 										bsSize="lg"
 									/>
 								</Col>
 							</FormGroup>
 							<FormGroup row>
-								<Label sm={3} size="lg">
+								<Label sm={2} size="lg">
 									Category
 								</Label>
-								<Col sm={9}>
-									<select onChange={(e) => this.setState({ fk_cat: e.target.value })}>
+								<Col sm={8}>
+									<select style={{
+										color: 'white',
+										backgroundColor: 'black',
+										marginTop:'15px',
+										width:'100px',}} 
+										onChange={(e) => this.setState({ fk_cat: e.target.value })}>
 										<option >Fiksi</option>
 										<option>Anak</option>
 									</select>
 								</Col>
 							</FormGroup>
 							<FormGroup row>
-								<Label sm={3} size="lg">
+								<Label sm={2} size="lg">
 									Location
 								</Label>
-								<Col sm={9}>
-								<select onChange={(e) => this.setState({ fk_loc: e.target.value })}>
+								<Col sm={8}>
+									<select style={{
+										color: 'white',
+										backgroundColor: 'black',
+										marginTop:'15px',
+										width:'100px',}}
+										onChange={(e) => this.setState({ fk_loc: e.target.value })}>
 										<option >Rak 1</option>
 										<option>Rak 2</option>
 									</select>
 								</Col>
 							</FormGroup>
+							<FormGroup row>
+								<Label sm={2} size="lg">
+									Description
+								</Label>
+								<Col sm={6}>
+									<textarea
+										type="text"
+										name="Description"
+										onChange={(e) => this.setState({ des: e.target.value })}
+										id="description"
+										placeholder="Description..."
+										style={{ width: '471px', height: '60px' }}
+									/>
+								</Col>
+							</FormGroup>
 						</Form>
 					</ModalBody>
 					<ModalFooter>
-						<a href='/books/'><button class="buttonSave" onClick={bookAdd.bind(this)}>
+						<a href='/books/'><button type='submit' class="buttonSave" onClick={bookAdd.bind(this)}>
 							SAVE
 						</button></a>
 					</ModalFooter>

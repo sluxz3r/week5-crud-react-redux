@@ -100,10 +100,10 @@ class Update extends Component {
                     <ModalBody>
                         <Form >
                             <FormGroup row >
-                                <Label sm={3} size="lg">
+                                <Label sm={2} size="lg">
                                     Name
 								</Label>
-                                <Col sm={9}>
+                                <Col sm={8}>
                                     <Input
                                         type="text"
                                         name="name"
@@ -116,10 +116,10 @@ class Update extends Component {
                                 </Col>
                             </FormGroup>
                             <FormGroup row >
-                                <Label sm={3} size="lg">
+                                <Label sm={2} size="lg">
                                     Writer
 								</Label>
-                                <Col sm={9}>
+                                <Col sm={8}>
                                     <Input
                                         type="text"
                                         name="writer"
@@ -132,10 +132,10 @@ class Update extends Component {
                                 </Col>
                             </FormGroup>
                             <FormGroup row>
-                                <Label sm={3} size="lg">
+                                <Label sm={2} size="lg">
                                     Image
 								</Label>
-                                <Col sm={9}>
+                                <Col sm={8}>
                                 <Input
 										type="text"
                                         name="image"
@@ -148,11 +148,16 @@ class Update extends Component {
                                 </Col>
                             </FormGroup>
                             <FormGroup row >
-                                <Label sm={3} size="lg">
+                                <Label sm={2} size="lg">
 									Category
 								</Label>
-								<Col sm={9}>
-                                    <select value={list ? list.fk_cat:''}                                  
+								<Col sm={8}>
+                                    <select style={{
+                                            color: 'white',
+                                            backgroundColor: 'black',
+                                            marginTop:'15px',
+                                            width:'100px',}} 
+                                            value={list ? list.fk_cat:''}                                  
                                             onChange={this.changeHandle}>
 										<option value='Fiksi' >Fiksi</option>
 										<option value='Anak'>Anak</option>
@@ -160,11 +165,16 @@ class Update extends Component {
 								</Col>
                             </FormGroup>
                             <FormGroup row >
-                                <Label sm={3} size="lg">
+                                <Label sm={2} size="lg">
 									Location
 								</Label>
-								<Col sm={9}>
-                                    <select value={list ? list.fk_loc:''}                                  
+								<Col sm={8}>
+                                    <select style={{
+										color: 'white',
+										backgroundColor: 'black',
+										marginTop:'15px',
+										width:'100px',}}  
+                                        value={list ? list.fk_loc:''}                                  
                                             onChange={this.changeHandle}>
 										<option value={list ? list.fk_loc:'Rak 1'} >Rak 1</option>
 										<option value={list ? list.fk_loc:'Rak 1'}>Rak 2</option>

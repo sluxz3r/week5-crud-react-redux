@@ -19,14 +19,13 @@ class Slide extends Component {
         });
     };
 
-
     render() {
         let whirligig
         const next = () => whirligig.next()
         const prev = () => whirligig.prev()
 
         const { books } = this.state;
-        const list = books.bookList;
+        const list = books.bookList
         console.log(list);
         return (
             <div className='atas'>
@@ -46,7 +45,11 @@ class Slide extends Component {
                                         </Link>
                                         <h6 className='name'>{data.name}</h6>
                                         <p className='writer'>By : {data.writer}</p>
-                                        <p className='status'>Tersedia</p>
+                                        {data.status_borrow == 1 ? (
+                                            <p className='status'>No Stock</p>
+                                        ) : (
+                                            <p className='status'>Available</p>
+                                        )}
                                     </div>
                                 )
                             })}
