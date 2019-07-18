@@ -15,6 +15,3 @@
 ### My Mentor Bwang [Tatas](https://github.com/tatasfachrul).
 
 ### Crafted With Love
-
-
-
