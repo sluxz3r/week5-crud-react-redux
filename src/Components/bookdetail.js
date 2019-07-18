@@ -14,7 +14,7 @@ class bookdetail extends Component {
         const bookid = this.props.match.params.bookid
         await this.props.dispatch(getBook(bookid));
         this.setState({
-            books: this.props.book,
+            books: this.props.book
         });
     };
 
