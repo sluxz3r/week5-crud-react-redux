@@ -1,5 +1,5 @@
 .nav {
-    color: rgb(255, 255, 255);
+    
     padding-top: 6px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-weight: bold;
@@ -9,8 +9,14 @@
     z-index: 10000;
 }
 
-.nav p {
-    padding-left: 120px;
+.nav button {
+    margin-left: 100px;
+    color: rgb(255, 255, 255);
+    background: none;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+	outline: inherit;
 }
 
 @media screen and (min-width: 601px) {

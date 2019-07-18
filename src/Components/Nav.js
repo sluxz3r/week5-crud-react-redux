@@ -5,7 +5,7 @@ class Nav extends Component {
   render () {
     return (
         <div className='nav'>
-         <p>BOOKS</p>
+         <a href='/'><button>BOOKS</button></a>
         </div>
     );
   }

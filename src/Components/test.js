@@ -52,8 +52,18 @@ class Slide extends Component {
                             })}
                     </Whirligig>
                     <div className='button-next'>
-                    <button onClick={prev}>Prev</button>
-                    <button onClick={next}>Next</button>
+                        <button style={{
+                            color: 'white',
+                            backgroundColor: 'black',
+                            marginRight: '10px'
+                        }}
+                            onClick={prev}>Prev</button>
+                        <button style={{
+                            color: 'white',
+                            backgroundColor: 'black',
+                            marginRight: '10px'
+                        }}
+                            onClick={next}>Next</button>
                     </div>
                 </div>
             </div>
