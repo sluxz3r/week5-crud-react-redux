@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import '../assets/BooksList.css';
 
-import { getBooks } from '../Publics/redux/actions/book';
-
+import { getBooks, deleteBook } from '../Publics/redux/actions/book';
 
 class Books extends Component {
     state = {
+        index:'',
         books: [],
     };
     componentDidMount = async () => {
@@ -14,19 +15,26 @@ class Books extends Component {
             books: this.props.book,
         });
     };
+
+    deleteBook =  async (bookid) => {
+        await this.props.dispatch(deleteBook(bookid));
+       console.log(bookid)
+    }
+    
     render() {
         const { books } = this.state;
         const list = books.bookList;
         console.log(list);
         return (
             <div>
-                <table>
+                <div className="table-div"></div>
+                <h3 className="list-book">List All Books</h3>
+                <table class="darkTable">
                     <thead>
                         <tr>
-                            <th>No</th>
+                            <th >No</th>
                             <th>Book Name</th>
                             <th>Writer</th>
-                            <th>Image</th>
                             <th>Category</th>
                             <th>Location</th>
                             <th>Status</th>
@@ -34,28 +42,28 @@ class Books extends Component {
                         </tr>
                     </thead>
                     {list &&
-                        list.result.length > 0 &&
-                        list.result.map((item, index) => {
+                        list.length > 0 &&
+                        list.map((item, index) => {
                             return (
-                                <tbody>
-                                    <tr key={index}>
-                                        <td>{index + 1}</td>
-                                        <td>{item.name}</td>
-                                        <td>{item.writer}</td>
-                                        <td><img className="avatar" src={item.image} alt="Merchant Avatar"
-                                            style={{
-                                                width: '50px',
-                                                height: '50px'
-                                            }} /></td>
-                                        <td>{item.category}</td>
-                                        <td>{item.location}</td>
-                                        <td>Tersedia</td>
-                                        <td>
-                                            <button>Edit</button>
-                                            <button>Delete</button>
-                                        </td>
-                                    </tr>
-                                </tbody>
+                    <tbody>
+                        <tr key={index}>
+                            <td style={{textAlign:'center'}}>{index + 1}</td> 
+                            <td><a  style={{textDecoration:'none', color:'black'}} href={`/book/${item.bookid}`}>{item.name}</a></td>
+                            <td>{item.writer}</td>
+                            <td>{item.category}</td>
+                            <td>{item.location}</td>
+                            <td>Tersedia</td>
+                            <td style={{textAlign:'center'}}>
+                                <a href={`/books/${item.bookid}`}>
+                                <button className='button1'>Edit</button>
+                                </a>
+                                <a href='/books/'>
+                                    <button className='button2' onClick={() => this.deleteBook(item.bookid)}>Delete</button>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                  
                             )
                         })}
                 </table>

@@ -31,9 +31,6 @@ export const deleteBook = (bookid) => {
     
 };
 
-
-
-
 export const addBook = (data) => {
     return {
         type: 'ADD_BOOK', data,
@@ -41,4 +38,9 @@ export const addBook = (data) => {
     }
 };
 
-console.log(getBook);
+export const updateBook = (data, bookid) => {
+    return {
+      type: 'UPDATE_BOOK',
+      payload: axios.patch(`http://localhost:6969/${bookid}`,data),
+    }
+  };

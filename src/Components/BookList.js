@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import { Link } from 'react-router-dom';
+import '../assets/BookList.css';
 
 import {getBooks} from '../Publics/redux/actions/book';
 
@@ -21,40 +22,23 @@ class Book extends Component {
         console.log(list);
         return (
             <div>
-                <ul>
+                <div className='container'>
                     {list && 
                     list.result.length > 0 && 
                     list.result.map((data, index) =>{
                         return (
-                            <Link to={`book/${data.bookid}`}>
-                            <div 
-                                key={index}
-                                style={{
-                                    border:'2px solid black',
-                                    float:'left',
-                                    height: '250px',
-                                    margin: '5px 5px 5px 5px',
-                                    justifyContent:'center',
-                                }}
-                            >
-                                <img 
-                                    src={data.image}
-                                    alt='ah'
-                                    style={{
-                                        height:'100%',
-                                        width:'200px',
-                                    }}/>
-                                    <h4>{data.name}</h4>
-                                    <p>By : {data.writer}</p>
-                                    <p>Tersedia</p>
+                            <div className='get-all' key={index}>
+                                 <Link to={`book/${data.bookid}`}>
+                                <img className='image-all' src={data.image} alt='ah'/>
+                                </Link>
+                                    <h6 className='name'>{data.name}</h6>
+                                    <p className='writer'>By : {data.writer}</p>
+                                    <p className='status'>Tersedia</p>
                             </div>
-                            </Link>
                         )
                     })}
-                </ul>
-                <Link to='/books/'>
-                    <td>All</td>
-                </Link>
+                  
+                </div>
             </div>
         )
     }

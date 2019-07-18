@@ -22,6 +22,7 @@ class BookForm extends Component {
 		super(props);
 		this.state = {
 			modal: false,
+			act: 0,
 			book: [],
 			dropdownOpen: false
 		};
@@ -43,27 +44,47 @@ class BookForm extends Component {
 
 	render() {
 		const bookAdd = () => {
+			let fk_cat = '';
+			switch (this.state.fk_cat) {
+				case 'Anak':
+					fk_cat = 2;
+					break;
+				default:
+					fk_cat = 1;
+			}
+			let fk_loc = '';
+			switch (this.state.fk_loc) {
+				case 'Rak 2':
+					fk_loc = 2;
+					break;
+				default:
+					fk_loc = 1;
+			}
 			this.state.book.push({
 				name: this.state.name,
 				writer: this.state.writer,
+				des: this.state.des,
 				image: this.state.image,
-                fk_cat:this.state.fk_cat,
-                fk_loc:this.state.fk_loc
+				fk_cat,
+				fk_loc,
 			});
-			add()
+			
+		add()
 			this.setState((prevState) => ({
 				modal: !prevState.modal
 			}));
 			console.log(this.state.book);
 		};
 		let add = async () => {
-			await this.props.dispatch(postBook(this.state.book[0]));				
+			await this.props.dispatch(postBook(this.state.book[0]));
 		};
 		return (
 			<div>
-				<button class="button" onClick={this.toggle}>
-					ADD
+				<div class="button-bar">
+					<button class="button" onClick={this.toggle}>
+						+
 				</button>
+				</div>
 				<Modal isOpen={this.state.modal} toggle={this.toggle} className="{this.props.className} modal-lg">
 					<ModalHeader toggle={this.toggle}>
 						<b>Add Data</b>
@@ -72,7 +93,7 @@ class BookForm extends Component {
 						<Form>
 							<FormGroup row>
 								<Label sm={3} size="lg">
-									Title
+									Name
 								</Label>
 								<Col sm={9}>
 									<Input
@@ -87,7 +108,7 @@ class BookForm extends Component {
 							</FormGroup>
 							<FormGroup row>
 								<Label sm={3} size="lg">
-									Author
+									Writer
 								</Label>
 								<Col sm={9}>
 									<Input
@@ -95,7 +116,22 @@ class BookForm extends Component {
 										name="title"
 										onChange={(e) => this.setState({ writer: e.target.value })}
 										id="title"
-										placeholder="Author..."
+										placeholder="Writer..."
+										bsSize="lg"
+									/>
+								</Col>
+							</FormGroup>
+							<FormGroup row>
+								<Label sm={3} size="lg">
+									Description
+								</Label>
+								<Col sm={9}>
+									<textarea
+										type="text"
+										name="title"
+										onChange={(e) => this.setState({ des: e.target.value })}
+										id="title"
+										placeholder="Description..."
 										bsSize="lg"
 									/>
 								</Col>
@@ -120,14 +156,10 @@ class BookForm extends Component {
 									Category
 								</Label>
 								<Col sm={9}>
-									<Input
-										type="text"
-										name="title"
-										onChange={(e) => this.setState({ fk_cat: e.target.value })}
-										id="title"
-										placeholder="Category..."
-										bsSize="lg"
-									/>
+									<select onChange={(e) => this.setState({ fk_cat: e.target.value })}>
+										<option >Fiksi</option>
+										<option>Anak</option>
+									</select>
 								</Col>
 							</FormGroup>
 							<FormGroup row>
@@ -135,20 +167,16 @@ class BookForm extends Component {
 									Location
 								</Label>
 								<Col sm={9}>
-									<Input
-										type="text"
-										name="title"
-										onChange={(e) => this.setState({ fk_loc: e.target.value })}
-										id="title"
-										placeholder="Location..."
-										bsSize="lg"
-									/>
+								<select onChange={(e) => this.setState({ fk_loc: e.target.value })}>
+										<option >Rak 1</option>
+										<option>Rak 2</option>
+									</select>
 								</Col>
 							</FormGroup>
 						</Form>
 					</ModalBody>
 					<ModalFooter>
-						<a  href={"/books/"} ><button class="buttonSave" onClick={bookAdd.bind(this)}>
+						<a href='/books/'><button class="buttonSave" onClick={bookAdd.bind(this)}>
 							SAVE
 						</button></a>
 					</ModalFooter>
@@ -158,8 +186,8 @@ class BookForm extends Component {
 	}
 }
 const mapStateToProps = state => {
-    return {
-        book: state.book
-    };
+	return {
+		book: state.book
+	};
 };
-export default connect(mapStateToProps) (BookForm);
+export default connect(mapStateToProps)(BookForm);

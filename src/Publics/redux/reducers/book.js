@@ -26,7 +26,7 @@ const book = (state = initialState, action) => {
                 ...state,
                 isLoading: false,
                 isFulfilled: true,
-                bookList : action.payload.data,
+                bookList : action.payload.data.result,
             };
 
         // GET BOOK BY ID
@@ -73,6 +73,27 @@ const book = (state = initialState, action) => {
                 bookList: [state.bookList, action.payload.data[0]]
             };
 
+        //Update Book By ID
+        case 'UPDATE_BOOK_PENDING':
+            return {
+                ...state,
+                isLoading: true,
+                isFulfilled: false,
+                isRejected: false
+            };
+        case 'UPDATE_BOOK_REJECTED':
+            return {
+                ...state,
+                isLoading: false,
+                isRejected: true
+        };
+        case 'UPDATE_BOOK_FULFILLED':
+            return {
+                ...state,
+                isLoading: false,
+                isFulfilled: true,
+                bookList: [state.bookList, action.payload.data[0]]
+        };
         //Delete Book By ID
         case 'DELETE_BOOK_PENDING':
             return {
@@ -92,7 +113,7 @@ const book = (state = initialState, action) => {
                 ...state,
                 isLoading: false,
                 isFulfilled: true,
-                bookList : action.payload.data,
+                bookList: [state.bookList, action.payload.data[0]]
             };
     
         default:

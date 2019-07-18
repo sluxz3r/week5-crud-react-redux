@@ -28,13 +28,13 @@ class bookdetail extends Component {
                     <img className='gambar1' src={list ? list.image:''} alt="gambar" />
                     <div className='book'>
                         <NavLink to="/">Back</NavLink>
-                        <button>Edit</button>
-                        <button>Delete</button>
+                        <button>Pinjam</button>
                     </div>
                     <img className='gambar2' src={list ? list.image:''} alt="gambar" />
 
                     <h1 className="titel">{list ? list.name:''}</h1>
                     <p className="desc">{list ? list.writer:''}</p>
+                    <p className="desc">{list ? list.des:''}</p>
                 </div>
             </div>
         );

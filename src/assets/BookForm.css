@@ -1,16 +1,18 @@
+.button-bar {
+	margin-top: 20px; 
+}
+
 .button {
-	background-color: #f4cf5d;
+	background-color: #0084ff;
 	border: none;
-	color: black;
-	border-radius: 8px;
-	height: 38px;
-	width: 80px;
-	margin-left: 80%; 
-	margin-top: 40px;
-	font-size: 15px;
+	margin: -60px 0px 0px 1195px;
+	color: white;
+	border-radius: 10px;
+	height: 40px;
+	width: 100px;
+	font-size: 20pt;
 	outline: none;
 	cursor: pointer;
-	float: left;
 }
 
 .buttonSave {

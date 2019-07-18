@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import '../assets/HomePage.css'
+import { Link } from 'react-router-dom';
 
 import Search from '../Components/Search';
-import BookList from '../Components/BookList';
+import Slide from '../Components/test';
 
 
 class HomePage extends Component {
@@ -9,7 +11,11 @@ class HomePage extends Component {
         return (
                 <div>
                     <Search />
-                    <BookList />
+                    <Link to='/books/'>
+                    <button className='all'>All Books</button>
+                    </Link>
+                    <Slide />
+                  
                 </div>
         );
     }

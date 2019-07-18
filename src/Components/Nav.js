@@ -5,7 +5,7 @@ class Nav extends Component {
   render () {
     return (
         <div className='nav'>
-         BOOKS
+         <p>BOOKS</p>
         </div>
     );
   }
