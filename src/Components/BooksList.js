@@ -53,7 +53,7 @@ class Books extends Component {
                                         <td>{item.category}</td>
                                         <td>{item.location}</td>
                                         {item.status_borrow == 1 ? 
-                                        ( <td>No Stock</td> ) : ( <td>Available</td> )}
+                                        ( <td>Not Available</td> ) : ( <td>Available</td> )}
                                         <td style={{ textAlign: 'center' }}>
                                             <a href={`/books/${item.bookid}`}>
                                                 <button className='button1'>Edit</button>

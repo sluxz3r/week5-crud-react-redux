@@ -35,6 +35,7 @@ class Update extends Component {
             books: this.props.book
         });
     };
+
     toggle() {
         this.setState({
             modal: !this.state.modal
@@ -73,7 +74,7 @@ class Update extends Component {
 				fk_loc,
             
             });
-            console.log()
+        
             
             
         edit()
@@ -82,6 +83,7 @@ class Update extends Component {
             }));
 
         };
+        
         let edit = async () => {
             
             await this.props.dispatch(updateBook((this.state.tmp[0]), this.props.match.params.bookid));

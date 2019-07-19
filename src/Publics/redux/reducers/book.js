@@ -4,7 +4,7 @@ const initialState = {
     isFulfilled: false,
     isRejected: false,
 };
-
+//manage state 
 const book = (state = initialState, action) => {
     switch (action.type) {
         // GET ALL BOOKS

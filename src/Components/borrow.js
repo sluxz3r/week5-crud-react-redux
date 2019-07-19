@@ -15,18 +15,19 @@ import {
 import '../assets/borrow.css'
 import { postBorrow } from '../Publics/redux/actions/borrow';
 
-
 class BorrowForm extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+			id:this.props.id,
 			modal: false,
 			borrow: [],
 		};
 
 		this.toggle = this.toggle.bind(this);
+		console.log(this.state.id)
 	};
-
+	
 	toggle() {
 		this.setState({
 			modal: !this.state.modal
@@ -36,14 +37,13 @@ class BorrowForm extends Component {
 	render() {
 		const borrow = () => {
 			this.state.borrow.push({        
-            bookid: this.state.bookid,
+            bookid: this.state.id,
             user_id: this.state.user_id,
 			});
 			add()
 			this.setState((prevState) => ({
 				modal: !prevState.modal
 			}));
-			console.log(this.state.borrow);
 		};
 		let add = async () => {
 			await this.props.dispatch(postBorrow(this.state.borrow[0]));				
@@ -65,7 +65,7 @@ class BorrowForm extends Component {
 						<Form>
 							<FormGroup row>
 								<Label sm={3} size="lg">
-									User Id
+									No KTP
 								</Label>
 								<Col sm={9}>
 									<Input
@@ -73,22 +73,7 @@ class BorrowForm extends Component {
 										name="title"
 										onChange={(e) => this.setState({ user_id: e.target.value })}
 										id="title"
-										placeholder="NIK..."
-										bsSize="lg"
-									/>
-								</Col>
-							</FormGroup>
-							<FormGroup row>
-								<Label sm={3} size="lg">
-									Id Book
-								</Label>
-								<Col sm={9}>
-									<Input
-										type="text"
-										name="title"
-										onChange={(e) => this.setState({ bookid: e.target.value })}
-										id="title"
-										placeholder="ID Book..."
+										placeholder="No KTP"
 										bsSize="lg"
 									/>
 								</Col>
@@ -96,7 +81,7 @@ class BorrowForm extends Component {
 						</Form>
 					</ModalBody>
 					<ModalFooter>
-						<a href={`/book/${this.state.bookid}`}><button class="buttonSave" onClick={borrow.bind(this)}>
+						<a href={`/book/${this.state.id}`}><button class="buttonSave" onClick={borrow.bind(this)}>
 							SAVE
 						</button>
                         </a>

@@ -46,7 +46,7 @@ class Slide extends Component {
                                         <h6 className='name'>{data.name}</h6>
                                         <p className='writer'>By : {data.writer}</p>
                                         {data.status_borrow == 1 ? (
-                                            <p className='status'>No Stock</p>
+                                            <p className='status'>Not Available</p>
                                         ) : (
                                             <p className='status'>Available</p>
                                         )}
