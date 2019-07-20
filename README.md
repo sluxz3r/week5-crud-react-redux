@@ -2,7 +2,7 @@
 
 [Demo](https://laughing-yalow-3dc305.netlify.com/)
 
-### Git Clone [Server](https://github.com/sluxz3r/back-end.git
+### Git Clone [Server](https://github.com/sluxz3r/back-end.git)
 For the Server youu can Git Clone it
 
 ### Create Database in MySql.
