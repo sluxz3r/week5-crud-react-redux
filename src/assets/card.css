@@ -1,0 +1,43 @@
+.container{
+    margin-left: 100px;
+    }
+    
+    .get-all {
+        height: 260px;
+        width: 150px;
+        margin: 10px 10px 10px 10px;
+        box-shadow: 0px 0px 10px grey;
+        border-radius: 10px;
+        background-color: rgb(237, 237, 238);
+    }
+    
+    .image-all{
+        height: 180px;
+        width: 100%;
+        border-radius: 10px;
+        margin-bottom: 5px;
+    }
+    
+    .button-next{
+        text-align: center;
+    }
+    
+    .name {
+        margin-left: 10px;
+        margin-bottom: 0px;
+        font-weight: bold;
+    }
+    
+    .writer{
+        margin-left: 10px;
+        margin-bottom: 0px;
+        font-size: 11pt;
+    }
+    
+    .status {
+        text-align: center;
+        background-color: rgb(29, 25, 25);
+        color: white;
+        border-radius: 10px;
+        margin-top: 5px;
+    }

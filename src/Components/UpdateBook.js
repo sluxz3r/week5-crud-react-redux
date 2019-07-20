@@ -89,6 +89,7 @@ class Update extends Component {
             await this.props.dispatch(updateBook((this.state.tmp[0]), this.props.match.params.bookid));
             
         };
+        
         const list = this.state.books.bookList;
         console.log(this.state.tmp)
      
