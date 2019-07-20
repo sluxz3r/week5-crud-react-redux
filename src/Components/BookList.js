@@ -28,7 +28,7 @@ class Book extends Component {
                     list.result.map((data, index) =>{
                         return (
                             <div className='get-all' key={index}>
-                                 <Link to={`book/${data.bookid}`}>
+                                 <Link to={`/book/${data.bookid}`}>
                                 <img className='image-all' src={data.image} alt='ah'/>
                                 </Link>
                                     <h6 className='name'>{data.name}</h6>

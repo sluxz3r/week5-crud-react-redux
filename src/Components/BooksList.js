@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import '../assets/BooksList.css';
 
 import { getBooks, deleteBook } from '../Publics/redux/actions/book';
@@ -55,9 +56,9 @@ class Books extends Component {
                                         {item.status_borrow == 1 ? 
                                         ( <td>Not Available</td> ) : ( <td>Available</td> )}
                                         <td style={{ textAlign: 'center' }}>
-                                            <a href={`/books/${item.bookid}`}>
+                                            <Link to={`/books/${item.bookid}`}>
                                                 <button className='button1'>Edit</button>
-                                            </a>
+                                            </Link>
                                             <a href='/books/'>
                                                 <button className='button2' onClick={() => this.deleteBook(item.bookid)}>Delete</button>
                                             </a>
