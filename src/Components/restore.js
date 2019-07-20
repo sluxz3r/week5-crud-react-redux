@@ -20,7 +20,6 @@ class Restore extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			index:'',
 			modal: false,
 			borrow: [],
 			update: []
