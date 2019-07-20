@@ -54,7 +54,8 @@ class BorrowForm extends Component {
                             color: 'white',
                             backgroundColor: 'black',
                             marginBottom: '10px',
-                            width:'100px'}} onClick={this.toggle}>
+							width:'100px'}} 
+						onClick={this.toggle}>
 					Borrow
 				</button>
 				<Modal isOpen={this.state.modal} toggle={this.toggle} className="{this.props.className} modal-lg">

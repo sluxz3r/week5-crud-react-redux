@@ -21,6 +21,7 @@ class Denda extends Component {
         this.state = {
             modal: true,
             borrow: [],
+            updates:[],
             denda: 0,
             hari: 0,
         };
@@ -61,6 +62,9 @@ class Denda extends Component {
 
     render() {
         const editBorrows = () => {
+            this.state.updates.push({
+				denda: this.state.denda
+			})
                 
             update()
 			this.setState((prevState) => ({
@@ -69,7 +73,7 @@ class Denda extends Component {
 		};
 
         let update = async () => {
-            await this.props.dispatch(updateBorrow((this.state.denda), this.props.match.params.bookid))
+            await this.props.dispatch(updateBorrow((this.state.updates[0]), this.props.match.params.bookid))
         };
 
         return (
@@ -83,7 +87,7 @@ class Denda extends Component {
                         (<p>Maaf Anda Terlambat {this.state.hari} Hari <br />Rp. {this.state.denda}</p>)}
                     </ModalBody>
                     <ModalFooter>
-                        <a><button class="buttonSave" onClick={editBorrows.bind(this)}>
+                        <a href={`/book/${this.props.match.params.bookid}`}><button class="buttonSave" onClick={editBorrows.bind(this)}>
                             Confirm
 						</button></a>
                     </ModalFooter>
