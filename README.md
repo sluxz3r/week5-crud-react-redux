@@ -15,3 +15,5 @@
 ### My Mentor Bwang [Tatas](https://github.com/tatasfachrul).
 
 ### Crafted With Love
+
+![alt text](https://github.com/sluxz3r/week5-crud-react-redux/blob/master/src/assets/img/satu.png)
