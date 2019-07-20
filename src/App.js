@@ -12,6 +12,7 @@ import test from './Components/test';
 import UpdateBook from './Components/UpdateBook';
 
 import book from './Components/bookdetail';
+import denda from './Components/denda';
 
 class App extends Component {
   render() {
@@ -23,6 +24,7 @@ class App extends Component {
             <Route exact path={'/'} component={HomePage} />
             <Route path ={'/books/'} component={List} />
             <Route path={'/book/:bookid'} component={book} />
+            <Route path={'/booq/:bookid'} component={denda} />
             <Route path={'/books/:bookid'} component={UpdateBook} />
             <Route path={'/test/'} component={test} />
           </Router>

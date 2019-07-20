@@ -12,18 +12,15 @@ import {
 	Input
 } from 'reactstrap';
 
-
 import '../assets/restore.css';
 import { getBorrows, updateBorrow } from '../Publics/redux/actions/borrow';
 
-class Restore extends Component {
+class Denda extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			index:'',
-			modal: false,
+			modal: true,
 			borrow: [],
-			update: []
 		};
 
 		this.toggle = this.toggle.bind(this);
@@ -67,31 +64,24 @@ class Restore extends Component {
 
 		const { borrow } = this.state;
 		const list = borrow.borrowList;
-	
 		console.log("list", list)
+		console.log(this.state.update)
+		console.log("props", this.props.match.params.bookid)
+
 		return (
 			<div>
-				<button style={{
-					color: 'white',
-					backgroundColor: 'black',
-					marginBottom: '10px',
-					width: '100px'
-				}}
-					onClick={this.toggle} >
-					Return
-				</button>
 				<Modal isOpen={this.state.modal} toggle={this.toggle} className="{this.props.className} modal-lg">
 					
 					<ModalHeader toggle={this.toggle}>
-						<b>Restore</b>
+						<b>Denda</b>
 					</ModalHeader>
 
 					<ModalBody>
-						<b>Name : {this.props.name}</b>
+						<b>Tidak Ada Biaya Denda</b>
 					</ModalBody>
 
 					<ModalFooter>
-						<a href={`/booq/${this.props.id}`}><button class="buttonSave" onClick={editBorrow.bind(this)}>
+						<a href={`/book/${this.props.match.params.bookid}`}><button class="buttonSave">
 							Confirm
 						</button></a>
 					</ModalFooter>
@@ -105,4 +95,4 @@ const mapStateToProps = (state) => {
 		borrow: state.borrow
 	};
 };
-export default connect(mapStateToProps)(Restore);
+export default connect(mapStateToProps)(Denda);

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getBook } from '../Publics/redux/actions/book';
 import { NavLink } from 'react-router-dom';
+
 import Borrow from '../Components/borrow';
 import Restore from '../Components/restore';
 
@@ -46,7 +47,7 @@ class bookdetail extends Component {
                         }}>Back</button>
                     </NavLink>
                     
-                        {status == 1 ? (<Restore id={bookid}  />) 
+                        {status == 1 ? (<Restore id={bookid} name={name} />) 
                         : (<Borrow id={bookid} />)}
 
                 </div>
