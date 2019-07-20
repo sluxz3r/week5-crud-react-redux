@@ -21,9 +21,17 @@ Read on Backend Readme for Database Information
 Home Page
 ![alt text](https://github.com/sluxz3r/week5-crud-react-redux/blob/master/src/assets/img/satu.png)
 
-
-![alt text](https://github.com/sluxz3r/week5-crud-react-redux/blob/master/src/assets/img/dua.png)
-![alt text](https://github.com/sluxz3r/week5-crud-react-redux/blob/master/src/assets/img/tiga.png)
-![alt text](https://github.com/sluxz3r/week5-crud-react-redux/blob/master/src/assets/img/empat.png)
+Search Book
 ![alt text](https://github.com/sluxz3r/week5-crud-react-redux/blob/master/src/assets/img/lima.png)
+
+Page Book List
+![alt text](https://github.com/sluxz3r/week5-crud-react-redux/blob/master/src/assets/img/dua.png)
+
+Add Book
+![alt text](https://github.com/sluxz3r/week5-crud-react-redux/blob/master/src/assets/img/empat.png)
+
+Edit Book
+![alt text](https://github.com/sluxz3r/week5-crud-react-redux/blob/master/src/assets/img/tiga.png)
+
+Transaksi Peminjaman dan Pemulangan beserta Denda
 ![alt text](https://github.com/sluxz3r/week5-crud-react-redux/blob/master/src/assets/img/enam.png)
